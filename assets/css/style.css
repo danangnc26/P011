@@ -19,6 +19,14 @@ body{
 	font-family: 'Catamaran', sans-serif;
 	background: #fffaf3;
 }
+a{
+  color: #990033;
+  
+}
+a:hover, a:focus{
+  color: #990033;
+  text-decoration: none;
+}
 
 h1, h2, h3, h4{
 	margin-top: 0px;
@@ -36,6 +44,10 @@ hr.cs {
 }
 .cst-image{
 	width: 100%;
+  height: 180px;
+  padding: 5px;
+  background: #fff;
+  box-shadow: 0px 1px 2px #888888;
 }
 /*hr.cs:after {
     content: "§";
@@ -47,13 +59,21 @@ hr.cs {
     background: white;
 }*/
 .content{
-	width: 80%;
+	/*width: 80%;*/
 	/*background: #fff;*/
 	margin: auto;
 	/*border:1px solid #dfdfdf;*/
 	margin-top: 2em;
 	margin-bottom: 2em;
 	padding: 1.5em;
+}
+
+.general{
+  width: 80%;
+}
+
+.login{
+  width: 30%;
 }
 
 footer{
@@ -66,6 +86,41 @@ footer{
 .grd-hold{
 	background: #fff; padding:0.5em; box-shadow: 0px 1px 2px #888888; border-radius:3px; margin-bottom: 20px;
 }
+
+label{
+  font-weight: normal;
+}
+label.b{
+  font-weight: bold;
+}
+
+table.dt{
+    border:1px solid #990033;
+    font-size: 13px;
+    width: 100%;
+  }
+
+  table.dt th{
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  table.dt th, table.dt td{
+    padding: 0.3em 0.5em 0.3em 0.5em;
+    border:1px solid #990033;
+  }
+
+  table.dt thead tr{
+    border-bottom: 4px double #990033;
+  }
+
+  table.dt tr:nth-child(even){
+    background: transparent;
+  }
+
+  table.dt tr:nth-child(odd){
+    background: #ffe7ef;
+  }
 
 
 /*CUSTOMIZE BOOTSTRAP*/
@@ -87,7 +142,7 @@ footer{
 	border: none;
 	box-shadow: none;
 	border-bottom: none;
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #990033;
 	border-bottom: 1px solid #ddd;
 	font-size: 1.1em;
 }
@@ -128,16 +183,43 @@ footer{
 	color: #fff;
 }
 
+.nav-pills>li>a{
+  color: #990033; 
+  border-radius: 2px;
+}
+
+.nav-pills>li.active>a{
+  background: #990033;
+}
+.nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+  background: #990033; 
+}
+
+input.bootstrap-timepicker-hour, input.bootstrap-timepicker-minute{
+  border:none;
+}
+
+/*, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover*/
+
+
+/**/
+
 .hid-menu{
 	display: none;
 }
 
 input.cst, select.cst, textarea.cst{
     	border-radius: 2px;
-    	border: 1px solid #990066;
+    	border: 1px solid #990033;
     	box-shadow: none;
     	font-family: inherit;
     }
+.input-group-addon{
+  border: 1px solid #990033;
+  background: #990033;
+  color: #fff;
+  font-weight: bold;
+}
 /*SLIDER*/
 .rslides {
   position: relative;
@@ -181,8 +263,17 @@ input.cst, select.cst, textarea.cst{
 button{
 	font-family: 'Catamaran', sans-serif;
 	font-weight: bold;
+
 }
-.btn{
+/*.btn{
+  
+}*/
+.cst1{
+  background: none;
+  color: #990033;
+  border:1px solid #990033;
+  font-weight: bold;
+
   display: inline-block;
   vertical-align: top;
   font-family: 'Catamaran', sans-serif;
@@ -191,26 +282,44 @@ button{
   height: 40px;
   line-height: 40px;
   text-align: center;
-  text-decoration: none;
+  /*text-decoration: none;
   outline: none;
-  border: none;
+  border: none;*/
   border-radius: 2px;  
-}
-.cst1{
-  background: none;
-  color: #990033;
-  border:1px solid #990033;
 }
 .cst1:hover{
   background: #990033;
   border-color: #990033;
   color: rgba(255, 255, 255, 0.9);
 }
+
+.cst1:focus{
+  background: #990033;
+  border-color: #990033;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.img-tbl{
+  max-width: 150px;
+}
+
+.td-cst{
+  width: 260px;
+}
+
 @media screen and (max-width: 600px) {
+
+  .td-cst{
+    width: 100%;
+  }
 
 	button.cst-btn{
 		width: 100%;
 	}
+
+  .btn-full{
+    width: 100%;
+  }
 
 	.content{
 		width: 100%;
@@ -237,5 +346,39 @@ button{
 	.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
 		background-color: transparent;
 	}
+
+      table.resp {
+        border: 3px double #990033;
+        width: 100%;
+      }
+
+      table.resp thead {
+        display: none;
+      }
+
+      table.resp tr {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #990033;
+      }
+
+      table.resp td {
+        display: block;
+        text-align: right;
+        font-size: 13px;
+        border-bottom: 1px dashed #990033;
+        padding: 5px;
+      }
+
+      table.resp td:last-child {
+        border-bottom: 0;
+      }
+
+      table.resp td:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: capitalize;
+        font-weight: bold;
+      }
 
 }

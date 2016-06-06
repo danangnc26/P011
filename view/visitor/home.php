@@ -3,30 +3,28 @@
 	<div class="col-md-6">
 		<!-- <img src="<?php echo base_url.'assets/img/fdw.jpg' ?>" width="100%" style="margin-bottom:20px;"> -->
 		<ul class="rslides" style="margin-bottom:20px;">
-		  <li><img src="<?php echo base_url.'assets/img/fdw.jpg' ?>" alt=""></li>
-		  <li><img src="<?php echo base_url.'assets/img/fdww.jpg' ?>" alt=""></li>
-		  <li><img src="<?php echo base_url.'assets/img/15.jpg' ?>" alt=""></li>
+		<?php
+		if(Lib::getImages('slider') == null){
+
+		}else{
+		foreach (Lib::getImages('slider') as $key => $value) {
+		?>
+		  <li><img src="<?php echo base_url.'public/images/'.$value['image'] ?>" alt=""></li>
+		<?php
+		}}
+		?>
 		</ul>
 	</div>
 	<div class="col-md-6">
 		<h3 style="font-family:Oleo Script; font-size:2.7em">Freedom Dance Works</h3>
 		<hr class="cs">
-		<p style="text-align:justify; font-size:1.3em">
-			Dance by Freedom Works is a Dance Company specialist devoted to the art of dance. 
-			It covers Modern dance, Hip hop dance, Contemporary dance, Traditional dance, 
-			Wedding dance and Dance schooling. 
-		</p>
-		<p style="text-align:justify; font-size:1.3em">
-		We are aimed at professional dancers and dance lovers. 
-			We will make your Special Events, Company Gathering, 
-			Birthday Party or even your own Wedding more special.
-		</p>
 		<?php 
-		$current_dayname = date("l"); // return sunday monday tuesday etc.
-             
-		$date = date("Y-m-d",strtotime('monday this week')).'to'.date("Y-m-d",strtotime("$current_dayname this week"));
-		echo $date;
-		 ?>
+		if(Lib::page('home') == null){
+
+		}else{
+			echo htmlspecialchars_decode(Lib::page('home')[0]['text']);
+		}
+		?>
 	</div>
 </div>
 <script>

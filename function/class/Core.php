@@ -23,7 +23,7 @@ Class Core{
 		}
 		$sql = rtrim($sql, ',');
 		if ($this->con()->query($sql) === TRUE) {
-			$this->cls($this->con());
+			
 		    return true;
 
 		} else {
@@ -47,7 +47,7 @@ Class Core{
 			}
 		}
 		if ($this->con()->query($sql) === TRUE) {
-			$this->cls($this->con());
+			
 		    return true;
 
 		} else {
@@ -117,6 +117,66 @@ Class Core{
 		    while($row = $result->fetch_assoc())
 		        $data[] = $row;
 		        return $data;
+		} else {
+		    return null;
+		}
+	}
+
+	// FUNGSI UTAMA PENGAMBILAN DATA DARI SUATU TABEL DENGAN PERINTAH SQL YANG SUDAH DITENTUKAN SEBELUMNYA
+	public function raw($state)
+	{
+
+		$sql = "$state";
+
+		$result = $this->con()->query($sql);
+
+		if ($result->num_rows > 0) {
+		    // output data of each row
+		    while($row = $result->fetch_assoc()) 
+
+		        $data[] = $row;
+
+		        return $data;
+		    
+
+		} else {
+
+		    return false;
+
+		}
+
+	}
+
+	// FUNGSI UTAMA PENULISAN DATA KE DALAM TABEL DENGAN PERINTAH SQL YANG SUDAH DITENTUKAN SEBELUMNYA
+	public function raw_write($query)
+	{
+
+		$sql = "$query";
+
+		if ($this->con()->query($sql) === TRUE) {
+		    
+			return true;
+
+		} else {
+		    
+			return false;
+
+		}
+
+	}
+
+	public function enumList($column_name, $prop = ''){
+		$sql = "SELECT COLUMN_TYPE FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_NAME = '$this->_tableName' AND COLUMN_NAME = '$column_name'";
+		if($prop){
+			$sql .= " ".$prop;
+		}
+		$result = $this->con()->query($sql);
+
+		if ($result->num_rows > 0) {
+		    // output data of each row
+		    while($row = $result->fetch_assoc())
+		        $data[] = explode(",", str_replace("'", "", substr($row['COLUMN_TYPE'], 5, (strlen($row['COLUMN_TYPE'])-6))));;
+		        return $data[0];
 		} else {
 		    return null;
 		}
