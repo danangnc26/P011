@@ -41,7 +41,7 @@
 	<script src="<?php echo base_url ?>assets/plugin/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
 
 	<link media="all" type="text/css" rel="stylesheet" href="<?php echo base_url ?>assets/plugin/bootstrap-timepicker/css/bootstrap-timepicker.min.css">
-	<script src="<?php echo base_url ?>assets/plugin/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+	<script src="<?php echo base_url ?>assets/plugin/bootstrap-timepicker2/js/bootstrap-timepicker.js" type="text/javascript"></script>
 
 	<link rel="stylesheet" href="<?php echo base_url ?>assets/plugin/pricing/style.css">
 </head>

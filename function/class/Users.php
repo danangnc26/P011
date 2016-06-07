@@ -32,7 +32,7 @@ class Users extends Core{
 					echo "default";
 				}
 			}else{
-				echo Lib::redirectjs(app_base.'login', "Login gagal, username / password yang anda masukkan salah.");
+				echo Lib::redirectjs(app_base.'login', "Login failed, username / password you entered is incorrect.");
 			}
 		} catch (Exception $e) {
 			echo $e->getMessage();

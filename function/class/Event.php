@@ -54,7 +54,11 @@ class Event extends Core{
 					'note'				=> nl2br($input['note'])
 					];
 			if($this->update($data, $this->primaryKey, $input['id_event'])){
+
+				$mail_url = base_url.'function/sendmail.php?id_event='.$input['id_event'];
+				file_get_contents($mail_url);
 				Lib::redirect('index_appointment&main=appointment');
+				
 			}else{
 				header($this->back);
 			}

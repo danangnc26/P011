@@ -115,23 +115,29 @@
 			});
 		});
 		$('.datepicker').datepicker({
-				format : 'dd-mm-yyyy'
+				format : 'dd-mm-yyyy',
+				startDate: 'today',
+				endDate: '+1095d'
 		});
 
 		$('.datepicker-meeting').datepicker({
 				format : 'dd-mm-yyyy',
 				daysOfWeekDisabled: [0,6],
 				startDate: 'today',
+				endDate: '+1095d'
     			// endDate: $('input[name=event_date]').val()
 		});
 		// $('input[name=meeting_date]').attr("data-date-end-date","23-06-2016");
 
 
 		$('.timepicker-24').timepicker({
+				defaultTime: '15:00',
                 autoclose: true,
                 minuteStep: 10,
                 showSeconds: false,
-                showMeridian: false
+                showMeridian: false,
+                minHours: 15,
+                maxHours: 19,
             });
 		$(window).load( function() {
 
