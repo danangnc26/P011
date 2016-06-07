@@ -20,6 +20,7 @@
 			<li><a href="<?php echo app_base.'about' ?>">About Us</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
+				<li><a href="<?php echo app_base.'check_schedule' ?>">Check Our Schedule</a></li>
 				<?php
 				if(empty($_SESSION)){
 				?>
@@ -37,7 +38,6 @@
 				}else{
 				?>
 				<li><a href="<?php echo app_base.'my_appointment' ?>">My Appointment</a></li>
-				<li><a href="<?php echo app_base.'check_schedule' ?>">Check Our Schedule</a></li>
 				<?php
 				}
 				?>

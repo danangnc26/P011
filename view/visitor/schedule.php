@@ -1,4 +1,13 @@
-<?php Lib::uCheck() ?>
+<?php 
+if(empty($_SESSION)){
+	echo Lib::redirectjs(app_base.'login', 'You must login first.');
+}else{
+	// if($_SESSION['level_user'] == 'admin'){
+	// 	header(string)
+	// }
+}
+// Lib::uCheck() 
+?>
 <style type="text/css">
 	.bootstrap-timepicker-widget table{
 		border:none;
