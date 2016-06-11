@@ -123,6 +123,7 @@
 								<th>Meeting Time</th>
 								<th>Event Type</th>
 								<th>Package</th>
+								<th>Meeting Location</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -136,6 +137,7 @@
 								<td><?php echo substr($value['meeting_time'], 0,5) ?></td>
 								<td><?php echo Lib::EventName($value['id_event_type']) ?></td>
 								<td><?php echo Lib::packageName($value['id_sub_event_type']) ?></td>
+								<td>Freedom Dance Works Office</td>
 							</tr>
 						<?php } ?>
 						</tbody>
@@ -152,6 +154,7 @@
 								<th>Event Time</th>
 								<th>Event Type</th>
 								<th>Package</th>
+								<th>Event Location</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -165,6 +168,7 @@
 								<td><?php echo substr($value['event_time'], 0,5) ?></td>
 								<td><?php echo Lib::EventName($value['id_event_type']) ?></td>
 								<td><?php echo Lib::packageName($value['id_sub_event_type']) ?></td>
+								<td><?php echo $value['event_location'] ?></td>
 							</tr>
 						<?php } ?>
 						</tbody>
