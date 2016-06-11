@@ -16,6 +16,26 @@
 					  			<?php echo Lib::userName($value['id_user']) ?>
 					  		</div>
 					  	</div>
+					  	<div class="row">
+					  		<div class="col-md-2">
+					  			<label class="b">Phone</label>
+					  		</div>
+					  		<div class="col-md-6">
+					  			<div class="form-group">
+							  		<?php echo Lib::userPhone($value['id_user']) ?>
+							  	</div>
+					  		</div>
+					  	</div>
+					  	<div class="row">
+					  		<div class="col-md-2">
+					  			<label class="b">Email</label>
+					  		</div>
+					  		<div class="col-md-6">
+					  			<div class="form-group">
+							  		<?php echo Lib::userEmail($value['id_user']) ?>
+							  	</div>
+					  		</div>
+					  	</div>
 					  	<div class="row" style="margin-bottom:10px;">
 					  		<div class="col-md-8">
 					  			<h5 style=" font-size:1.3em; color:#990033">Meeting Request</h5>

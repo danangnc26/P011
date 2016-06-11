@@ -81,4 +81,24 @@ class Event extends Core{
 		}
 	}
 
+	public function deleteAppointment($id)
+	{
+		if($this->delete($this->primaryKey, $id)){
+			Lib::redirect('index_appointment&main=appointment');
+		}else{
+			header($this->back);
+		}
+	}
+
+	public function getReport($dt, $tp)
+	{
+		if($tp == 'meeting'){
+			return $this->findAll("where meeting_date like '".$dt."%' and status=1");
+		}elseif($tp == 'event'){
+			return $this->findAll("where event_date like '".$dt."%' and status=2");
+		}else{
+			return null;
+		}
+	}
+
 }

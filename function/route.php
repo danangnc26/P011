@@ -124,6 +124,10 @@ function route($page)
 				$event->proccessAppointment($p);
 			break;
 
+		case 'delete_appointment':
+				$event->deleteAppointment($g['id_event']);
+			break;
+
 		case 'change_password':
 				include "view/component/change_password.php";
 			break;
@@ -140,6 +144,20 @@ function route($page)
 			break;
 		case 'update_profile':
 				$user->updateProfil($p);
+			break;
+		case 'index_report':
+				if(isset($g['report_type'])){
+					if($g['report_type'] == 'meeting'){
+						$data = $event->getReport($g['tahun'].'-'.$g['bulan'], $g['report_type']);
+					}elseif($g['report_type'] == 'event'){
+						$data = $event->getReport($g['tahun'].'-'.$g['bulan'], $g['report_type']);
+					}else{
+						$data = null;
+					}
+				}else{
+					$data = null;
+				}
+				include "view/admin/report/index.php";
 			break;
 		
 

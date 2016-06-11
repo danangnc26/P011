@@ -69,6 +69,14 @@ foreach ($data as $key => $value) {
 		$mlbd[] = '<td width="50%" style="border:none; border-bottom: 1px solid #999; padding:5px 10px 5px 10px;">'.Lib::userName($value['id_user']).'</td>';
 		$mlbd[] = '</tr>';
 		$mlbd[] = '<tr>';
+		$mlbd[] = '<td width="50%" style="border:none; border-bottom: 1px solid #999; padding:5px 10px 5px 10px;">Phone</td>';
+		$mlbd[] = '<td width="50%" style="border:none; border-bottom: 1px solid #999; padding:5px 10px 5px 10px;">'.Lib::userPhone($value['id_user']).'</td>';
+		$mlbd[] = '</tr>';
+		$mlbd[] = '<tr>';
+		$mlbd[] = '<td width="50%" style="border:none; border-bottom: 1px solid #999; padding:5px 10px 5px 10px;">Email</td>';
+		$mlbd[] = '<td width="50%" style="border:none; border-bottom: 1px solid #999; padding:5px 10px 5px 10px;">'.Lib::userEmail($value['id_user']).'</td>';
+		$mlbd[] = '</tr>';
+		$mlbd[] = '<tr>';
 		$mlbd[] = '<td colspan="2" width="50%" style="border:none; border-bottom: medium double #990033; font-weight:bold; color:#990033; padding:5px 10px 5px 10px;">Meeting Detail</td>';
 		$mlbd[] = '</tr>';
 		$mlbd[] = '<tr>';

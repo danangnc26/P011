@@ -45,7 +45,7 @@
 									<a title="Detail" href="<?php echo app_base.'detail_appointment&main=appointment&id_event='.$value['id_event'] ?>">
 										<i style="font-size:1.8em; margin-right:20px;" class="fa fa-mail-forward"></i>
 									</a>
-									<a title="Reject" href="">
+									<a title="Delete" onclick="return confirm('Are you sure want to delete this data?')" href="<?php echo app_base.'delete_appointment&main=appointment&id_event='.$value['id_event'] ?>">
 										<i style="font-size:1.8em" class="fa fa-close"></i>
 									</a>
 								</td>

@@ -45,6 +45,13 @@ Class Lib{
 		return $result2[0]['email'];
 	}
 
+	public static function userPhone($id)
+	{
+		$u = new Users();
+		$result2 = $u->findBy('id_user', $id);
+		return $result2[0]['phone'];
+	}
+
 	public static function random_color_part() {
     return str_pad( dechex( mt_rand( 0, 255 ) ), 2, '0', STR_PAD_LEFT);
 	}

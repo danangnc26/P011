@@ -33,4 +33,9 @@
 			<i class="fa fa-bookmark"></i> Appointment List
 		</a>
 	</li>
+	<li role="presentation" <?php echo ($cl == 'report') ? 'class="active"' : '' ?>>
+		<a href="<?php echo app_base.'index_report&main=report' ?>">
+			<i class="fa fa-file-text-o"></i> Event & Meeting Schedule Report
+		</a>
+	</li>
 </ul>

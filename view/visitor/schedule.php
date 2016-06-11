@@ -106,6 +106,9 @@ if(empty($_SESSION)){
 								</select>
 							</div>
 							<div class="form-group">
+								<small>*note : Meeting place is only at Freedom Dance Works Office</small>
+							</div>
+							<div class="form-group">
 								<button style="width:100%" class="btn cst1" ><i class="fa fa-bookmark"></i> Send Appointment</button>
 							</div>
 						</div>

@@ -9,9 +9,11 @@
 		}else{
 		foreach (Lib::getImages('gallery') as $key => $value) {
 		?>
-		  <div class="col-xs-6 col-md-3">
-		    <img width="100%" height="300" class="cst-image" src="<?php echo base_url.'public/images/'.$value['image'] ?>"   style="margin-bottom:10px;">
+		  <a onclick="gtThumbnail(<?php echo $value['id_image'] ?>)" href="#" data-toggle="modal" data-target=".myModal">
+		  	<div class="col-xs-6 col-md-3">
+		    <img id="thm_<?php echo $value['id_image'] ?>" width="100%" height="300" class="cst-image" src="<?php echo base_url.'public/images/'.$value['image'] ?>"   style="margin-bottom:10px;">
 		  </div>
+		  </a>
 		<?php
 		}}
 		?>
@@ -27,3 +29,25 @@
 		</div> -->
 	</div>
 </div>
+  <!-- Modal -->
+  <div class="modal fade myModal" id="" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <img id="thmodal" style="width:100%">
+        </div>
+      </div>
+      
+    </div>
+  </div>
+<script type="text/javascript">
+	function gtThumbnail(id){
+		var im = $('#thm_'+id).attr("src");
+		$('#thmodal').attr("src", im);
+	}
+</script>
